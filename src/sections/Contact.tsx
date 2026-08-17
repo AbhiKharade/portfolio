@@ -35,7 +35,7 @@ export default function Contact() {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://portfolio-backend-xj14.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export default function Contact() {
         <SectionHeading title="Get In Touch" subtitle="Have a question or want to work together?" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          
+
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -140,7 +140,7 @@ export default function Contact() {
                     <input type="email" id="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium text-gray-300">Subject</label>
                   <input type="text" id="subject" value={formData.subject} onChange={handleChange} placeholder="Project Inquiry" className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
@@ -169,7 +169,7 @@ export default function Contact() {
       </div>
 
       {/* Floating Toast Popup */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: status.message ? 1 : 0, y: status.message ? 0 : 50 }}
         className="fixed bottom-8 right-8 z-50 pointer-events-none"
